@@ -1,58 +1,56 @@
-# 🛠️ Product API (Spring Boot + MySQL + Docker)
+# Product API (Spring Boot + MySQL + Docker)
 
 This is a fully functional, production-ready **RESTful API** built with **Spring Boot**, connected to **MySQL**, and Dockerized for deployment. It allows full CRUD operations on a `Product` resource.
 
-## 📦 Tech Stack
+---
 
-- Java 17
-- Spring Boot
-- Spring Data JPA
-- MySQL
-- Docker
-- Maven
+## Tech Stack
+
+- Java 17  
+- Spring Boot  
+- Spring Data JPA  
+- MySQL  
+- Docker  
+- Maven  
 
 ---
 
-## 🚀 Features
+## Features
 
-- Clean layered architecture: Controller → Service → Repository → Database
-- Connects to **local MySQL** or Dockerized MySQL
-- Docker support with environment-based DB config
-- CRUD REST endpoints
-- Ready to deploy via Docker Hub
-
----
-
-## 🧪 API Endpoints
-
-| Method | URL | Description |
-|--------|-----|-------------|
-| GET    | `/api/products`       | Get all products |
-| GET    | `/api/products/{id}`  | Get product by ID |
-| POST   | `/api/products`       | Create a new product |
-| DELETE | `/api/products/{id}`  | Delete a product by ID |
+- Clean layered architecture: Controller → Service → Repository → Database  
+- Connects to **local MySQL** or Dockerized MySQL  
+- Docker support with environment-based DB config  
+- CRUD REST endpoints  
+- Ready to deploy via Docker Hub  
 
 ---
 
-## 🐳 Run with Docker (Using Local MySQL)
+## API Endpoints
 
-### 1️⃣ Build the JAR
+| Method | URL                  | Description        |
+|--------|----------------------|--------------------|
+| GET    | `/api/products`      | Get all products   |
+| GET    | `/api/products/{id}` | Get product by ID  |
+| POST   | `/api/products`      | Create a new product |
+| DELETE | `/api/products/{id}` | Delete a product by ID |
 
-```
+---
+
+## Run with Docker (Using Local MySQL)
+
+### 1. Build the JAR
+```bash
 ./mvnw clean package
 ```
 
-### 2️⃣ Build Docker Image
-
-```
+### 2. Build Docker Image
+```bash
 docker build -t barambaras/product-api .
 ```
 
-### 3️⃣ Run Docker Container
-
+### 3. Run Docker Container
 Make sure your local MySQL is running on port `3306`, then:
-
-```
+```bash
 docker run -p 8080:8080 --name product-api \
 --add-host=host.docker.internal:host-gateway \
 -e SPRING_DATASOURCE_URL=jdbc:mysql://host.docker.internal:3306/product_db \
@@ -63,13 +61,13 @@ barambaras/product-api
 
 ---
 
-## 🗃️ Docker Hub Image
+## Docker Hub Image
 
-[👉 barambaras/product-api on Docker Hub](https://hub.docker.com/r/barambaras/product-api)
+[barambaras/product-api on Docker Hub](https://hub.docker.com/r/barambaras/product-api)
 
 ---
 
-## ✅ Example JSON Request
+## Example JSON Request
 
 ```json
 {
@@ -80,10 +78,10 @@ barambaras/product-api
 
 ---
 
-## ✍️ Author
+## Author
 
-Missie Kahsay
-- Backend Developer | AWS Certified | DevOps
-- GitHub: [github.com/missiekahsay](https://github.com/missiekahsay)
+**Missie Kahsay**  
+Backend Developer | AWS Certified | DevOps  
+GitHub: [github.com/missiekahsay](https://github.com/missiekahsay)
 
 ---
